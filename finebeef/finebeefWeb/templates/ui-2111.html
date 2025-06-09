@@ -1,0 +1,321 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  {% include 'partials/_meta.html' %}
+</head>
+
+<body>
+  <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+    <header class="topbar" data-navbarbg="skin6">
+      <nav class="navbar top-navbar navbar-expand-md">
+        <div class="navbar-header" data-logobg="skin6">
+          <!-- Logo -->
+          <div class="navbar-brand">
+            <!-- Logo icon -->
+            <a href="{% url 'evaluate_random' %}">
+              <img src="{% static '/images/logo/logo.svg' %}" alt="homepage" class="dark-logo" />
+            </a>
+          </div>
+          <!-- End Logo -->
+        </div>
+
+        <div class="navbar-collapse collapse">
+          <h2>섬세지수 계산</h2>
+        </div>
+      </nav>
+    </header>
+
+    {% include 'partials/_sidebar.html' %}
+
+    <div class="page-wrapper">
+      <div class="container-fluid">
+        <form id="calculate-fineness-form" action="{% url 'calculate_fineness' %}" method="post"
+          enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="file-upload-wrap">
+            <p class="info">
+              입력한 등심영상 (KBM3 촬영 영상)에 대한 지방 섬세지수를
+              계산합니다. <br />
+              단일 영상 파일(.jpg) 혹은 다수의 영상 파일을 압축한 파일(.zip)을
+              업로드하세요. <br />
+              단, 한 번에 최대 20개의 이미지를 처리할 수 있습니다.
+            </p>
+            <div class="form-group w-50">
+              <div class="file-wrap">
+                <input type="file" name="uploadedFile" id="fileUpload" class="sr-only"
+                  accept="image/jpeg, image/jpg, .zip" />
+                <p class="form-control" data-placeholder="파일을 등록해주세요.">
+                  파일을 등록해주세요.
+                </p>
+                <label for="fileUpload" class="btn btn-outline-primary">파일 찾기</label>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="wrap">
+                <div class="card-title">섬세지수 정보</div>
+                <p>
+                  F11: 입자면적 5-8 구간 입자 갯수 / F16: 단위면적당 지방입자 5-8 구간 개수 / F17: 수정된 단위면적당 지방입자 5-8 구간 개수
+                </p>
+              </div>
+              <button type="button" class="btn btn-primary btn-submit btn-result">
+                섬세지수 계산
+              </button>
+            </div>
+
+            <div class="result-wrap">
+              <div class="table-wrap">
+                <table class="ta-table table-center">
+                  <caption class="sr-only">
+                    섬세지표 결과
+                  </caption>
+                  <colgroup>
+                    <col style="width: 20%" />
+                    <col style="width: 20%" />
+                    <col style="width: 20%" />
+                    <col style="width: 10%" />
+                    <col style="width: 10%" />
+                    <col style="width: 10%" />
+                    <col style="width: 10%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>입력 영상</th>
+                      <th>등심영역</th>
+                      <th>지방입자</th>
+                      <th>육질 등급</th>
+                      <th>F11</th>
+                      <th>F16</th>
+                      <th>F17</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- modal -->
+      <div class="modal-container"></div>
+    </div>
+    <!-- End Page wrapper  -->
+  </div>
+
+  {% include 'partials/_script.html' %}
+
+  <script>
+    $(function () {
+      let dangerModal = {
+        id: "modalDanger",
+        style: "alert",
+        body: "입력 파일이 등심 영상이 아닙니다.",
+        button: [
+          {
+            text: "확인",
+            style: "",
+            link: "javascript:void(0)",
+            close: true,
+          },
+        ],
+      };
+      makeModal(dangerModal);
+
+      let errorModal = {
+        id: "modalError",
+        style: "alert",
+        body: "서버 오류가 발생하였습니다. 다시 시도해주세요.",
+        button: [
+          {
+            text: "확인",
+            style: "",
+            link: "javascript:void(0)",
+            close: true,
+          },
+        ],
+      };
+      makeModal(errorModal);
+
+      let errorModalAlter = {
+        id: "modalErrorAlter",
+        style: "alert",
+        body: "한 번에 업로드 가능한 이미지 파일 최대 개수를 초과하였습니다. 20개 이하의 이미지를 업로드해 주세요.",
+        button: [
+          {
+            text: "확인",
+            style: "",
+            link: "javascript:void(0)",
+            close: true,
+          },
+        ],
+      };
+      makeModal(errorModalAlter);
+
+      let imgModal = {
+        id: "modalImg",
+        style: "modal-md",
+        body: "",
+        button: [
+          {
+            text: "확인",
+            style: "btn-primary",
+            link: "javascript:void(0)",
+            close: true,
+          },
+        ],
+      };
+      makeModal(imgModal);
+
+      $(document).on("click", '[data-modal="modalImg"]', function () {
+        let imgSrc = $(this).find("img").attr("src");
+        let $thisTr = $(this).closest("tr");
+        let $thisIndex = $(this).closest("td").index();
+        let $thisTitle = $(this)
+          .closest("table")
+          .find("thead th")
+          .eq($thisIndex)
+          .text();
+
+        let img = new Image();
+        img.onload = function () {
+          let imageTitle = $thisTr.find("td").eq(7).text();
+
+          $("#modalImg").find(".modal-body").html(`
+                    <p class="title">${imageTitle}</p>
+                    <div class="d-flex">
+                      <img src="${imgSrc}" alt="beef-img-preview" style="width:80%; height:auto;">
+                      <div class="data-wrap">
+                          <div class="data">
+                            <div class="wrap">
+                                  <div class="key">육질 등급</div>
+                                  <div class="value">${$thisTr
+                                    .find("td")
+                                    .eq(3)
+                                    .text()}</div>
+                              </div>
+                              <div class="wrap">
+                                  <div class="key">F11</div>
+                                  <div class="value">${$thisTr
+                                    .find("td")
+                                    .eq(4)
+                                    .text()}</div>
+                              </div>
+                              <div class="wrap">
+                                  <div class="key">F16</div>
+                                  <div class="value">${$thisTr
+                                    .find("td")
+                                    .eq(5)
+                                    .text()}</div>
+                              </div>
+                              <div class="wrap">
+                                  <div class="key">F17</div>
+                                  <div class="value">${$thisTr
+                                    .find("td")
+                                    .eq(6)
+                                    .text()}</div>
+                              </div>
+                        
+                          </div>
+                      </div>
+                    </div>
+                `);
+
+          $("#modalImg").modal("show");
+        };
+
+        img.src = imgSrc;
+      });
+
+      $(".btn-submit").click(function () {
+        // 등심 영상 파일이 업로드되었는지 확인
+        if ($("#fileUpload").get(0).files.length === 0) {
+          $("#modalDanger").modal("show");
+          return false;
+        }
+
+        // 응답이 오기 전까지 로딩 이미지 활성화
+        Utils.startLoading();
+
+        // 로딩 이미지를 띄우고 서버로부터 응답을 기다림
+        $(".btn-submit").prop("disabled", true);
+        $(".btn-submit").html("로딩중...");
+
+        var csrftoken = document.querySelector(
+          "[name=csrfmiddlewaretoken]"
+        ).value;
+
+        $.ajax({
+          url: '{% url "calculate_fineness" %}',
+          type: "POST",
+          data: new FormData($("#calculate-fineness-form")[0]),
+          contentType: false,
+          processData: false,
+          headers: {
+            "X-CSRFToken": csrftoken,
+          },
+          success: function (data) {
+            // 서버로부터 응답이 오면 로딩 이미지를 숨김
+            $(".btn-submit").prop("disabled", false);
+            $(".btn-submit").html("섬세지수 계산");
+            Utils.endLoading();
+
+            // 결과를 화면에 표시
+            var tbody = $(".table-wrap tbody");
+            tbody.empty();
+
+            for (var i = 0; i < data.results.length; i++) {
+              var result = data.results[i];
+              var row = $("<tr>");
+
+              row.append(
+                '<td><a href="javascript:void(0)" data-modal="modalImg"><img src="' +
+                result[1] +
+                '" alt="beef-img" class="result-img"></a></td>'
+              );
+              row.append(
+                '<td><a href="javascript:void(0)" data-modal="modalImg"><img src="' +
+                result[2] +
+                '" alt="beef-img" class="result-img"></a></td>'
+              );
+              row.append(
+                '<td><a href="javascript:void(0)" data-modal="modalImg"><img src="' +
+                result[3] +
+                '" alt="beef-img" class="result-img"></a></td>'
+              );
+              row.append('<td class="value">' + result[4] + ' (' + result[5] + ')' + "</td>");
+              row.append('<td class="value">' + result[6] + "</td>");
+              row.append('<td class="value">' + result[7] + "</td>");
+              row.append('<td class="value">' + result[8] + "</td>");
+              row.append('<td class="value" hidden>' + result[0] + "</td>");
+
+              tbody.append(row);
+            }
+          },
+          error: function (xhr, textStatus, errorThrown) {
+            Utils.endLoading();
+            $(".btn-submit").prop("disabled", false);
+            $(".btn-submit").html("섬세지수 계산");
+
+            // 입력 이미지 개수가 20개 이상일 경우 에러메시지 출력
+            if (xhr.status == 400) {
+              $("#modalErrorAlter").modal("show");
+            } else {
+              $("#modalError").modal("show");
+            }
+          },
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+@font-face {
+	font-family: "iconfont";
+	src: url('iconfont.eot');
+	src: 
+		/*url('iconfont.eot?#iefix') format('eot'),*/
+		url('iconfont.woff') format('woff'),
+		/*url('iconfont.woff2') format('woff2'),*/
+		url('iconfont.ttf') format('truetype'),
+		url('iconfont.svg#iconfont') format('svg');
+}
+
+.icon {height: fit-content; font-size: 16px;}
+.icon:before {
+	font-family: "iconfont";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+
+	font-size: inherit;
+	display: inline-block;
+	transform: rotate(180deg) scaleX(-1);
+}
+
+
+.cs-response:before {
+	content: "\E001";
+}
+
+.setting:before {
+	content: "\E002";
+}
+
+.user-list:before {
+	content: "\E003";
+}
+
+.list-check:before {
+	content: "\E004";
+}
+
+.tag-plus:before {
+	content: "\E005";
+}
+
+.calendar-date:before {
+	content: "\E006";
+}
+
+.calendar-check:before {
+	content: "\E007";
+}
+
+.user:before {
+	content: "\E008";
+}
+
+.file-export:before {
+	content: "\E009";
+}
+
+.file-add:before {
+	content: "\E00A";
+}
+
+.arrow-left:before {
+	content: "\E00B";
+}
+
+.arrow-right:before {
+	content: "\E00C";
+}
+
+.arrow-first:before {
+	content: "\E00D";
+}
+
+.arrow-last:before {
+	content: "\E00E";
+}

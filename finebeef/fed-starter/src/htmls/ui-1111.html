@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('_meta.html')
+  </head>
+
+  <body>
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+      <div class="regist">
+        <div class="row">
+          <div class="col-8">
+            <div class="logo-wrap">
+              <div class="wrap">
+                <img src="/images/logo/logo.svg" alt="logo" />
+                <p>쇠고기 근내지방 섬세지수 정보 연구</p>
+                <img src="../images/heart.png" alt="img-heart">
+              </div>
+              <div class="video-wrap">
+                <video src="../images/login.mp4" autoplay muted playsinline poster="../images/login.png" class="regist-bg"></video>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-wrap">
+              <div>
+                <h3>로그인</h3>
+                <form action="" method="post">
+                  <div class="input-wrap">
+                    <label class="ta-label" for="login_username">아이디</label>
+                    <input class="ta-form" type="text" id="username" placeholder="아이디를 입력해주세요.">
+                    <p class="invalid-feedback">아이디를 확인해주세요.</p>
+                  </div>
+                  <div class="input-wrap">
+                    <label class="ta-label" for="login_password">비밀번호</label>
+                    <input class="ta-form" type="password" id="password" placeholder="비밀번호를 입력해주세요." placeholder="비밀번호를 입력해주세요.">
+                    <p class="invalid-feedback">비밀번호를 확인해주세요.</p>
+                  </div>
+        
+                  <p class="invalid-feedback feedback-all">죄송합니다. 로그인에 실패했습니다. <br>아이디(ID)와 비밀번호를 확인하고 다시 로그인해주세요.</p>
+                  
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">로그인</button>
+                  <div class="text-center">
+                    <a href="#" class="link-go">회원가입</a>
+                  </div>
+                </form>
+              </div>
+
+              <div class="logos">
+                <img src="../images/logo/logo-kape@3x.png" alt="logo-kape">
+                <img src="../images/logo/logo-isg@3x.png" alt="logo-isg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    @@include('_script.html')
+    </script>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {% include 'partials/_meta.html' %}
+  </head>
+
+  <body>
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+      
+      <header class="topbar" data-navbarbg="skin6">
+        <nav class="navbar top-navbar navbar-expand-md">
+          <div class="navbar-header" data-logobg="skin6">
+            <!-- Logo -->
+            <div class="navbar-brand">
+              <!-- Logo icon -->
+              <a href="#">
+                <img src="{% static '/images/logo/logo.svg' %}" alt="homepage" class="dark-logo" />
+              </a>
+            </div>
+            <!-- End Logo -->
+          </div>
+          
+          <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <h2>데이터 큐레이션</h2>
+            <div class="tab-button-wrap" data-target="main-content">
+              <button class="btn tab-btn active" data-tab="evaluation">데이터 평가</button>
+              <button class="btn tab-btn " data-tab="record">평가 이력</button>
+            </div>
+          </div>
+        </nav>
+      </header>
+    
+      {% include 'partials/_sidebar.html' %}
+      
+      <div class="page-wrapper">
+        <div class="tab-container" data-target="main-content">
+          <div class="tab-area active" data-tab="evaluation">
+            <div class="container-lg">
+              <div class="row">
+                <div class="col-6">
+                  <img src="{{ cow_data.image_file.url }}" alt="beef-img">
+                </div>
+                <div class="col-6">
+                  <h3 class="text-center mb-40">이 한우 등심 영상의 근내 지방은 <br>얼마나 섬세한지 고르시오</h3>
+                  <form action="{% url 'evaluate_detail' cow_data=cow_data action=action %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="cow_id" value="{{ cow_data.identifier }}">
+                    <input type="hidden" name="action" value="update">
+                    <div class="d-flex">
+                      <div class="ta-custom-wrap">
+                        <input type="radio" name="customRadio" id="custom_radio_1" value="1" class="sr-only"/>
+                        <label for="custom_radio_1">매우 섬세</label>
+                      </div>
+                      <div class="ta-custom-wrap">
+                        <input type="radio" name="customRadio" id="custom_radio_2" value="2" class="sr-only" />
+                        <label for="custom_radio_2">섬세</label>
+                      </div>
+                      <div class="ta-custom-wrap">
+                        <input type="radio" name="customRadio" id="custom_radio_3" value="3" class="sr-only" />
+                        <label for="custom_radio_3">보통</label>
+                      </div>
+                      <div class="ta-custom-wrap">
+                        <input type="radio" name="customRadio" id="custom_radio_4" value="4" class="sr-only" />
+                        <label for="custom_radio_4">뭉침</label>
+                      </div>
+                      <div class="ta-custom-wrap">
+                        <input type="radio" name="customRadio" id="custom_radio_5" value="5" class="sr-only" />
+                        <label for="custom_radio_5">매우 뭉침</label>
+                      </div>
+                      <div class="ta-custom-wrap">
+                        <input type="radio" name="customRadio" id="custom_radio_9" value="9" class="sr-only" />
+                        <label for="custom_radio_9">영상품질문제로 판정불가</label>
+                      </div>
+                    </div>
+                    {% if messages %}
+                      <br>
+                      <div class="message-container text-center">
+                        {% for message in messages %}
+                          <div class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %}">
+                            {{ message }}
+                          </div>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                    {% if user_data.evaluate_count >= max_count and not request.path|slice:'-7:' == 'update/' %}
+                      <br>
+                      <div class="alert alert-warning mt-2 text-center">
+                        최대 평가 횟수에 도달했습니다.
+                      </div>
+                    {% endif %}
+                    <button type="submit" class="btn btn-primary btn-submit" 
+                      {% if user_data.evaluate_count >= max_count and not request.path|slice:'-7:' == 'update/' %}
+                        disable
+                      {% endif %}
+                    >제출하기</button>
+                  </form>
+                </div>
+              </div>
+              <div class="progress-wrap">
+                <progress id="progress" value="{{ user_data.evaluate_count }}" min="0" max="{{ max_count }}"></progress>
+                <div class="text">{{ user_data.evaluate_count }} / {{ max_count }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-area " data-tab="record">
+            <div class="container-fluid">
+              <h3>평가 이력</h3>
+              <div class="table-wrap">
+                <table id="basic_table" class="table dataTable-wrap ta-table">
+                  <caption class="sr-only">
+                    데이터 큐레이션 - 평가 이력
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th class="text-center sorting-no">번호</th>
+                      <th>사진 이름</th>
+                      <th>평가 일자 / 시간</th>
+                      <th>수정 일자 / 시간</th>
+                      <th class="text-center">평가</th>
+                      <th class="text-center">&nbsp;</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for evaluation in evaluations %}
+                    <tr>
+                      <td class="text-center">{{ forloop.counter }}</td>
+                      <td class="url" data-url="{% url 'evaluate_detail' cow_data=evaluation.cow action='update' %}">{{ evaluation.cow.identifier }}</td>                      
+                      <td>{{ evaluation.evaluated_at|date:"Y-m-d H:i" }}</td>
+                      {% if evaluation.evaluated_at|date:"YmdHis" != evaluation.modified_at|date:"YmdHis" %}
+                      <td>{{ evaluation.modified_at|date:"Y-m-d H:i" }}</td>
+                      {% else %}
+                      <td>-</td>
+                      {% endif %}
+
+                      <td class="text-center">
+                        {% if evaluation.fineness == 1 %}
+                          <span class="badge badge-blue">매우 섬세</span>
+                        {% elif evaluation.fineness == 2 %}
+                          <span class="badge badge-teal">섬세</span>
+                        {% elif evaluation.fineness == 3 %}
+                          <span class="badge badge-green">보통</span>
+                        {% elif evaluation.fineness == 4 %}
+                          <span class="badge badge-yellow">뭉침</span>
+                        {% elif evaluation.fineness == 5 %}
+                          <span class="badge badge-orange">매우 뭉침</span>
+                        {% elif evaluation.fineness == 9 %}
+                          <span class="badge badge-orange">영상품질문제로 판정불가</span>
+                        {% endif %}
+                      </td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Page wrapper  -->
+    </div>
+    
+    {% include 'partials/_script.html' %}
+
+    <script>
+      $(function () {
+        // 평가를 완료했을 경우 기본 활성화 탭을 'record'로 변경
+        if (window.location.pathname.endsWith('/post/')) {
+          if ({{ user_data.evaluate_count }} >= {{ max_count }}) {
+            $('.tab-area').removeClass('active');
+            $('[data-tab="record"]').addClass('active');
+            $('.tab-btn').removeClass('active');
+            $('[data-tab="record"]').addClass('active');
+          }
+        }
+        //dataTable-wrap 의 다른 아이디 필요
+    
+        let colWidth = [
+          { "width": "15%" },
+          { "width": "23%" },
+          { "width": "23%" },
+          { "width": "23%" },
+          { "width": "8%" },
+          { "width": "8%" },
+        ]
+        Utils.setDataTable('#basic_table', [0], colWidth, 'asc');
+      });
+    </script>    
+  </body>
+</html>

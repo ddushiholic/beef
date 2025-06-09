@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2964de"/>
+      <stop offset="1" stop-color="#193b8e"/>
+    </linearGradient>
+  </defs>
+  <g id="그룹_41336" data-name="그룹 41336" transform="translate(19220 19619)">
+    <rect id="사각형_28864" data-name="사각형 28864" width="48" height="48" transform="translate(-19220 -19619)" fill="url(#linear-gradient)"/>
+    <g id="그룹_41335" data-name="그룹 41335" transform="translate(-19694.797 -19825.115)">
+      <g id="그룹_41168" data-name="그룹 41168" transform="translate(481.796 225.116)">
+        <path id="패스_38770" data-name="패스 38770" d="M8.564-49.011l.06-.012,3.222,5.989H9.606l-2.42-4.241L5.88-45.633v2.6H3.8v-10.11H5.88v4.516l3.5-4.516h2.456ZM14.3-43.034h-2.1l3.378-10.11h2.132l3.522,10.11h-2.1l-.767-2.288H15.032Zm1.318-4.1h2.144l-1.09-3.282Zm6.337,4.1v-10.11h4.552a5.681,5.681,0,0,1,1.485.168,2.312,2.312,0,0,1,.988.521,2.061,2.061,0,0,1,.551.9,4.3,4.3,0,0,1,.174,1.3v1.018a2.39,2.39,0,0,1-.833,2.054,4.428,4.428,0,0,1-2.617.617H24.04v3.534Zm4.36-5.307a1.677,1.677,0,0,0,1.042-.252,1,1,0,0,0,.311-.827v-.874a1,1,0,0,0-.311-.827,1.677,1.677,0,0,0-1.042-.252H24.04v3.031Zm4.432-4.8h7.127v1.773H32.833v2.36H37.7v1.773H32.833v2.444H38v1.761H30.748Z" transform="translate(-3.796 53.144)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

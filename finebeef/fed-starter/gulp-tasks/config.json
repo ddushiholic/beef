@@ -1,0 +1,53 @@
+{
+  "COMPATIBILITY": ["last 2 versions", "ie >= 11"],
+  "CSS": {
+    "src": "/scss/**/*.scss",
+    "dest": "/css"
+  },
+  "ERROR": "Error: <%= error.message %>",
+  "FONT": {
+    "src": "/fonts/**/*.{eot,otf,svg,ttf,woff,woff2}",
+    "dest": "/fonts"
+  },
+  "HTML": {
+    "src": "/htmls/**/*.html",
+    "dest": "/",
+    "basePath": "/htmls/partials"
+  },
+  "ICON": {
+    "src": "/iconfonts/**/*.svg",
+    "dest": "/iconfonts",
+    "templates": "/iconfonts/templates/"
+  },
+  "IMG": {
+    "src": "/images/**/*.{gif,jpg,jpeg,png,svg}",
+    "dest": "/images"
+  },
+  "JS": {
+    "src": "/js/*.js",
+    "dest": "/js"
+  },
+  "MJS": {
+    "entry": "/mjs/main.js",
+    "src": "/mjs/**/*.js",
+    "dest": "/js"
+  },
+  "CJS": {
+    "entry": "/cjs/main.js",
+    "src": "/cjs/**/*.js",
+    "dest": "/js"
+  },
+  "PATH": {
+    "src": "./src",
+    "dest": "./dist",
+    "public": "./public",
+    "vendor": "./node_modules"
+  },
+  "SERVER": {
+    "base": "./dist",
+    "port": 3000,
+    "proxy": false,
+    "proxyServer": "http://127.0.0.1:8000",
+    "watchFiles": ["./src/**/*.{scss,css,html,js}", "../**/templates/**/*.html", "!node_modules/"]
+  }
+}

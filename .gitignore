@@ -1,0 +1,47 @@
+__pycache__/
+*.class
+*.log
+*.pyc
+*.swp
+
+.DS_Store
+db.sqlite3
+
+migrations/
+media/
+
+## Logs
+*.log
+
+## Config files
+.idea/
+.cache/
+.sass-cache
+
+## Mac system files
+.DS_store
+
+## node_modules folder
+node_modules
+
+## Directories
+dist/
+public/dist/
+
+## Packages
+*.zip
+image/*
+#compose/*
+#docker-compose*
+nohup.out
+#bin/*
+result.xlsx
+
+# jupyter notebook
+*.ipynb_checkpoints*
+*local_settings.py
+finebeef/image/
+backup_sql/*
+_history/
+bin/postgres_data
+finebeef/static/

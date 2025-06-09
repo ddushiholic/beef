@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('_meta.html')
+  </head>
+
+  <body>
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+      
+      <header class="topbar" data-navbarbg="skin6">
+        <nav class="navbar top-navbar navbar-expand-md">
+          <div class="navbar-header" data-logobg="skin6">
+            <!-- Logo -->
+            <div class="navbar-brand">
+              <!-- Logo icon -->
+              <a href="/index.html">
+                <img src="/images/logo/logo.svg" alt="homepage" class="dark-logo" />
+              </a>
+            </div>
+            <!-- End Logo -->
+          </div>
+          
+          <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <h2>데이터 큐레이션</h2>
+            <div class="tab-button-wrap" data-target="main-content">
+              <button class="btn tab-btn " data-tab="evaluation">데이터 평가</button>
+              <button class="btn tab-btn active" data-tab="record">평가 이력</button>
+            </div>
+          </div>
+        </nav>
+      </header>
+     
+      @@include('_sidebar.html')
+      
+      <div class="page-wrapper">
+        <div class="tab-container" data-target="main-content">
+          <div class="tab-area " data-tab="evaluation">
+            <div class="container-lg">
+              <div class="row">
+                <div class="col-lg-6 col-md-12">
+                  <img src="../images/test-beef.png" alt="beef-img">
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <h3 class="text-center mb-40">이 한우 등심 영상의 근내 지방은 <br>얼마나 섬세한지 고르시오</h3>
+                  <form action="">
+                    <div class="d-flex">
+                      <div class="ta-custom-wrap">
+                        <input type="radio" name="customRadio" id="custom_radio_1" class="sr-only"/>
+                        <label for="custom_radio_1">매우 섬세</label>
+                      </div>
+                      <div class="ta-custom-wrap">
+                        <input type="radio" name="customRadio" id="custom_radio_2" class="sr-only" />
+                        <label for="custom_radio_2">섬세</label>
+                      </div>
+                      <div class="ta-custom-wrap">
+                        <input type="radio" name="customRadio" id="custom_radio_3" class="sr-only" />
+                        <label for="custom_radio_3">보통</label>
+                      </div>
+                      <div class="ta-custom-wrap">
+                        <input type="radio" name="customRadio" id="custom_radio_4" class="sr-only" />
+                        <label for="custom_radio_4">뭉침</label>
+                      </div>
+                      <div class="ta-custom-wrap">
+                        <input type="radio" name="customRadio" id="custom_radio_5" class="sr-only" />
+                        <label for="custom_radio_5">매우 뭉침</label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">제출하기</button>
+                  </form>
+                </div>
+              </div>
+              <div class="progress-wrap">
+                <progress id="progress" value="101" min="0" max="400"></progress>
+                <div class="text">101 / 400</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-area active" data-tab="record">
+            <div class="container-fluid">
+              <h3>평가 이력</h3>
+              <div class="table-wrap">
+                <table id="basic_table" class="table dataTable-wrap ta-table">
+                  <caption class="sr-only">
+                    데이터 큐레이션 - 평가 이력
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th class="text-center sorting-no">번호</th>
+                      <th>사진 이름</th>
+                      <th>평가 일자 / 시간</th>
+                      <th class="text-center">평가</th>
+                      <th class="text-center">&nbsp;</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center">0001</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0002</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-teal">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0003</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-green">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0004</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-yellow">뭉침</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0005</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-orange">매우 뭉침</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">매우 섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">섬세</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">0010</td>
+                      <td  class="url" data-url="ui-1111.html">0415_20230315_0017</td>
+                      <td>2023-06-02 / 13:01:13</td>
+                      <td class="text-center"><span class="badge badge-blue">보통</span></td>
+                      <td class="text-center"><i class="material-icons">arrow_forward_ios</i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- toast msg -->
+        <div class="toast-wrap" style="z-index: 11">
+          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="1000">
+            수정이 완료되었습니다.
+          </div>
+        </div>
+      </div>
+      <!-- End Page wrapper  -->
+    </div>
+
+    @@include('_script.html')
+<script>
+  $(function () {
+
+    $('#liveToast').toast('show')
+
+    //dataTable-wrap 의 다른 아이디 필요
+
+    let colWidth = [
+    { "width": "14%" },
+    { "width": "33%" },
+    { "width": "33%" },
+    { "width": "10%" },
+    { "width": "10%" },
+    ]
+    Utils.setDataTable('#basic_table', [0], colWidth, 'asc');
+  });
+</script>
+  </body>
+</html>

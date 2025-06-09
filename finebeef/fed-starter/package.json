@@ -1,0 +1,54 @@
+{
+  "name": "fed-gulp-start",
+  "version": "1.5.1",
+  "description": "A modern ES6 Gulp workflow combined with Webpack",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "gulp dev --gulpfile gulp-tasks",
+    "check": "gulp check --gulpfile gulp-tasks",
+    "build": "gulp build --gulpfile gulp-tasks --production",
+    "lint": "eslint ./src/mjs/**/*.{js}"
+  },
+  "author": "Insilicogen <jmchoi@insilicogen.com> (https://www.insilicogen.com)",
+  "private": true,
+  "engines": {
+    "node": "~14.15.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.19.0",
+    "babel-loader": "^8.2.5",
+    "browser-sync": "^2.27.10",
+    "copy-webpack-plugin": "^11.0.0",
+    "core-js": "^3.25.1",
+    "expose-loader": "^4.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-consolidate": "^0.2.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-iconfont": "^11.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-load-plugins": "^2.0.8",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "path": "^0.12.7",
+    "rimraf": "^3.0.2",
+    "sass": "^1.54.9",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^5.74.0",
+    "webpack-stream": "^7.0.0",
+    "yargs": "^17.5.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.19.3",
+    "bootstrap": "^4.6.2",
+    "jquery": "^3.5.1",
+    "jquery-ui-dist": "^1.13.0",
+    "popper.js": "1.16.1"
+  }
+}

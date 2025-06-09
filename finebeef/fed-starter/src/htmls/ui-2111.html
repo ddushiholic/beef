@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('_meta.html')
+  </head>
+
+  <body>
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+      
+      <header class="topbar" data-navbarbg="skin6">
+        <nav class="navbar top-navbar navbar-expand-md">
+          <div class="navbar-header" data-logobg="skin6">
+            <!-- Logo -->
+            <div class="navbar-brand">
+              <!-- Logo icon -->
+              <a href="/index.html">
+                <img src="/images/logo/logo.svg" alt="homepage" class="dark-logo" />
+              </a>
+            </div>
+            <!-- End Logo -->
+          </div>
+          
+          <div class="navbar-collapse collapse">
+            <h2>섬세지수 계산</h2>
+          </div>
+        </nav>
+      </header>
+     
+      @@include('_sidebar.html')
+      
+      <div class="page-wrapper">
+        <div class="container-fluid">
+          <div class="file-upload-wrap">
+            <p class="info">입력한 등심영상 (KBM3 촬영 영상)에 대한 지방 섬세지수를 계산합니다. <br>
+              단일 영상 파일(.jpg) 혹은 다수의 영상 파일을 압축한 파일(.zip)을 업로드하세요.
+            </p>
+            <div class="form-group w-50">
+              <div class="file-wrap">
+                <input type="file" name="" id="fileUpload" class="sr-only" accept="image/jpeg, image/jpg, .zip" >
+                <p class="form-control" data-placeholder="파일을 등록해주세요.">파일을 등록해주세요.</p>
+                <label for="fileUpload" class="btn btn-outline-primary">파일 찾기</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="wrap">
+                  <div class="card-title">섬세지수 정보</div>
+                  <p>* F7: 2018년 개발된 섬세지표 (격자 지방비 표준편차) / F11: 입자면적 5-6구간 입자갯수 / F12: 입자굴곡도 1-2구간 입자갯수 / F13:F11xF13</p>
+                </div>
+                <button type="button" class="btn btn-primary btn-submit btn-result">섬세지수 계산</button>
+              </div>
+              
+              <div class="result-wrap">
+                <div class="table-wrap">
+                  <table class="ta-table table-center">
+                    <caption class="sr-only">
+                      섬세지표 결과
+                    </caption>
+                    <colgroup>
+                      <col style="width:17%">
+                      <col style="width:17%">
+                      <col style="width:17%">
+                      <col style="width:17%">
+                      <col style="width:8%">
+                      <col style="width:8%">
+                      <col style="width:8%">
+                      <col style="width:8%">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>입력 영상</th>
+                        <th>등심영역</th>
+                        <th>지방입자1</th>
+                        <th>지방입자2</th>
+                        <th>F7</th>
+                        <th>F11</th>
+                        <th>F12</th>
+                        <th>F13</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <a href="javascript:void(0)" data-modal="modalImg">
+                            <a href="javascript:void(0)" data-modal="modalImg">
+                            <img src="../images/test-beef.png" alt="beef-img" class="result-img">
+                          </a>
+                          </a>
+                        </td>
+                        <td>
+                          <a href="javascript:void(0)" data-modal="modalImg">
+                            <img src="../images/test-beef.png" alt="beef-img" class="result-img">
+                          </a>
+                        </td>
+                        <td>
+                          <a href="javascript:void(0)" data-modal="modalImg">
+                            <img src="../images/test-beef.png" alt="beef-img" class="result-img">
+                          </a>
+                        </td>
+                        <td>
+                          <a href="javascript:void(0)" data-modal="modalImg">
+                            <img src="../images/test-beef.png" alt="beef-img" class="result-img">
+                          </a>
+                        </td>
+                        <td class="value">36.7</td>
+                        <td class="value">43.5</td>
+                        <td class="value">56.6</td>
+                        <td class="value">345</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a href="javascript:void(0)" data-modal="modalImg">
+                            <img src="../images/test-beef.png" alt="beef-img" class="result-img">
+                          </a>
+                        </td>
+                        <td>
+                          <a href="javascript:void(0)" data-modal="modalImg">
+                            <img src="../images/test-beef.png" alt="beef-img" class="result-img">
+                          </a>
+                        </td>
+                        <td>
+                          <a href="javascript:void(0)" data-modal="modalImg">
+                            <img src="../images/test-beef.png" alt="beef-img" class="result-img">
+                          </a>
+                        </td>
+                        <td>
+                          <a href="javascript:void(0)" data-modal="modalImg">
+                            <img src="../images/test-beef.png" alt="beef-img" class="result-img">
+                          </a>
+                        </td>
+                        <td class="value">36.7</td>
+                        <td class="value">43.5</td>
+                        <td class="value">56.6</td>
+                        <td class="value">345</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- modal -->
+        <div class="modal-container"></div>
+      </div>
+      <!-- End Page wrapper  -->
+    </div>
+
+    @@include('_script.html')
+<script>
+  $(function () {
+    let dangerModal = {
+      id: 'modalDanger',
+      style: 'alert',
+      body: '입력 파일이 등심 영상이 아닙니다.',
+      button: [
+        {
+          text: '확인',
+          style: '',
+          link: 'javascript:void(0)',
+          close: true
+        },
+      ],
+    }
+    makeModal(dangerModal);
+
+    let imgModal = {
+      id: 'modalImg',
+      style: 'modal-md',
+      body: '',
+      button: [
+        {
+          text: '확인',
+          style: 'btn-primary',
+          link: 'javascript:void(0)',
+          close: true
+        },
+      ],
+    }
+    makeModal(imgModal);
+
+    //$('#modalDanger').modal('show');
+
+    $(document).on('click', '[data-modal="modalImg"]', function() {
+      let img = $(this).find('img').attr('src');
+
+      //let $thisIndex = $(this).parents('td').index();
+      //let $thisTitle = $(this).parents('table').find('thead th').eq($thisIndex).text();
+      let $thisTitle = '0412_0240816_0007'
+
+      $('#modalImg').find('.modal-body').html(`
+        <p class="title">${$thisTitle}</p>
+        <div class="d-flex">
+          <img src=${img} alt="beef-img-preview">
+          <div class="data-wrap">
+            <div class="data">
+              <div class="wrap">
+                <div class="key">F7</div>
+                <div class="value">36.7</div>
+              </div>
+              <div class="wrap">
+                <div class="key">F11</div>
+                <div class="value">43.5<br>(중복)</div>
+              </div>
+              <div class="wrap">
+                <div class="key">F12</div>
+                <div class="value">56.6</div>
+              </div>
+              <div class="wrap">
+                <div class="key">F13</div>
+                <div class="value">345</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `);
+      $('#modalImg').modal('show');
+    });
+
+  });
+</script>
+  </body>
+</html>

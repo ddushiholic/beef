@@ -1,0 +1,41 @@
+<aside class="left-sidebar" data-sidebarbg="skin6">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar" data-sidebarbg="skin6">
+
+        <div class="greet">
+            안녕하세요,
+            <div class="login-user"><b>{{ user_data.username }}</b> 님</div>
+        </div>
+
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{% url 'evaluate_random' %}" aria-expanded="false">
+                        <i class="material-icons">insert_chart_outlined</i>
+                        <span>데이터 큐레이션</span>
+                    </a>
+                </li>
+
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link sidebar-link" href="{% url 'fineness_index' %}" aria-expanded="false">
+                        <i class="material-icons">list_alt</i>
+                        <span>섬세지수 계산</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+
+        
+        <a class="logout" href="{% url 'logout' %}" aria-expanded="false">
+            <i class="material-icons">logout</i>
+            <span>로그아웃</span>
+        </a>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>

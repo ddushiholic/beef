@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('_meta.html')
+  </head>
+
+  <body>
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+      
+      @@include('_header.html')
+      
+      @@include('_sidebar.html')
+      
+      <div class="page-wrapper">
+        <!--page-breadcrumb-->
+        <div class="page-breadcrumb">
+          <div class="row">
+            <div class="col-7 align-self-center">
+              <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">사용자</h4>
+              <div class="d-flex align-items-center">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb m-0 p-0">
+                    <li class="breadcrumb-item text-muted active" aria-current="page">사용자 관리</li>
+                    <li class="breadcrumb-item text-muted" aria-current="page">사용자</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End page-breadcrumb-->
+        <!--container-fluid-->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">아이콘</div>
+            <div class="col-12">
+              <p>아이콘 체크<i class="icon cs-response"></i></p>
+            </div>
+            <div class="col-12">
+              <i class="icon cs-response"></i>
+              <i class="icon setting"></i>
+              <i class="icon user-list"></i>
+              <i class="icon snack-study"></i>
+              <i class="icon list-check"></i>
+              <i class="icon list-mgt"></i>
+              <i class="icon timeline-mark"></i>
+              <i class="icon tag-plus"></i>
+              <i class="icon calendar-date"></i>
+              <i class="icon calendar-check"></i>
+              <i class="icon user"></i>
+              <i class="icon quiz"></i>
+              <i class="icon file-export"></i>
+              <i class="icon file-add"></i>
+              <i class="icon certificate"></i>
+              <i class="icon arrow-left"></i>
+              <i class="icon arrow-right"></i>
+              <i class="icon arrow-first"></i>
+              <i class="icon arrow-last"></i>
+            </div>
+
+            
+            <div class="col-12">
+              <span class="badge">사용중</span>
+              <span class="badge badge-lightblue">사용중</span>
+              <span class="badge badge-blue">사용중</span>
+              <span class="badge badge-purple">사용중</span>
+              <span class="badge badge-lightpurple">사용중</span>
+              <span class="badge badge-green">사용중</span>
+              <span class="badge badge-red">사용중</span>
+              <span class="badge badge-gray">사용중</span>
+              <span class="badge bg-danger">사용중</span>
+            </div>
+            
+          </div>
+        </div>
+        <!-- End Container fluid  -->
+      </div>
+      <!-- End Page wrapper  -->
+    </div>
+
+
+    @@include('_script.html')
+    <script>
+      $(function () {
+      });
+    </script>
+  </body>
+</html>

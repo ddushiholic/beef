@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {% include 'partials/_meta.html' %}
+  </head>
+
+  <body>
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+      
+      <header class="topbar" data-navbarbg="skin6">
+        <nav class="navbar top-navbar navbar-expand-md">
+          <div class="navbar-header" data-logobg="skin6">
+            <!-- Logo -->
+            <div class="navbar-brand">
+              <!-- Logo icon -->
+              <a href="{% static 'index' %}">
+                <img src="{% static '/images/logo/logo.svg' %}" alt="homepage" class="dark-logo" />
+              </a>
+            </div>
+            <!-- End Logo -->
+          </div>
+          
+          <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <h2>데이터 큐레이션</h2>
+            <div class="tab-button-wrap" data-target="main-content">
+              <button class="btn tab-btn active" data-tab="evaluation">데이터 평가</button>
+              <button class="btn tab-btn " data-tab="record">평가 이력</button>
+            </div>
+          </div>
+        </nav>
+      </header>
+    
+      {% include 'partials/_sidebar.html' %}
+
+
+      <div class="page-wrapper"></div>
+    </div>
+    {% include 'partials/_script.html' %}
+    <script>
+      // Loading for start process
+      Utils.startLoading();
+      console.log("로딩");
+
+      setTimeout(function(){
+        // Loading for end process
+        console.log("로딩 끝");
+        Utils.endLoading();
+      }, 200000);
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  finebeef_db:
+    image: postgres:15
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+        #      - ./backup_sql:/backup_sql
+    ports:
+     - "5801:5432"
+    environment:
+      - POSTGRES_DB=finebeef
+      - POSTGRES_USER=finebeef
+      - POSTGRES_PASSWORD=finebeef
+
+  finebeef_django:
+    build:
+      context: ..
+      dockerfile: ./bin/compose/django/Dockerfile
+    volumes:
+      - ../:/app/
+    working_dir: /app/finebeef
+    command: sh -c "gunicorn finebeef.wsgi:application --workers=20 --timeout=300 --bind 0.0.0.0:13100"
+    depends_on:
+     - finebeef_db
+    expose:
+      - "13100"
+
+  finebeef_nginx:                                                                                                                                          
+    image: nginx:latest
+    ports:
+     - "8400:80"
+    volumes:
+     - ./compose/nginx:/etc/nginx/conf.d
+#     - /var/www/html/finebeef/collectstatic:/static
+     - ../finebeef/collected_static:/static
+    depends_on:
+     - finebeef_django

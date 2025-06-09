@@ -1,0 +1,112 @@
+.modal {
+  &.alert {
+    .modal-dialog {
+      .modal-content {
+        border: solid 1px #707070;
+        overflow: hidden;
+
+        .modal-header {
+          background: #fff;
+          border-bottom: 0;
+          justify-content: center;
+          padding-top: rem(32);
+          img {
+            width: 164px;
+          }
+        }
+        .modal-body {
+          text-align: center;
+          > i {
+            font-size: rem(100);
+            margin-bottom: rem(8);
+            color: #fff;
+          }
+          > h3 {
+            font-size: rem(24);
+            color: #fff;
+          }
+          > p {
+            color: #fff;
+            opacity: 0.8;
+          }
+        }
+        .modal-footer {
+          justify-content: center;
+          border-top: 0;
+          color: #fff;
+          padding-bottom: rem(32);
+        }
+      }
+    }
+    &.danger {
+      .modal-dialog {
+        .modal-content {
+          background-image: linear-gradient(119deg, #fec74a -55%, #fb584a);
+
+          .modal-footer {
+            .btn-fill {
+              color: #ff6969;
+
+              i {
+                color: #ff6969;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.warning {
+      .modal-dialog {
+        .modal-content {
+          background-image: linear-gradient(121deg, #7e67e2, #4f6bdf);
+
+          .modal-footer {
+            .btn-fill {
+              color: #5f76e8;
+
+              i {
+                color: #5f76e8;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .modal-dialog {
+    .modal-content {
+      border-radius: rem(15);
+    }
+  }
+  .modal-dialog.modal-form {
+    margin-top: 6rem;
+    .modal-content {
+      border-radius: 5px;
+      //overflow: hidden;
+      .btn-modal-close {
+        position: absolute;
+        right: -20px;
+        top: -54px;
+        margin: 0;
+        padding: 0;
+        color: #fffe;
+        i {font-size: 24px;}
+      }
+      // 모달 안 card
+      .card {
+        box-shadow: none;
+        .card-header {
+          border-radius: 5px;
+          flex-wrap: wrap;
+          .info {width: 100%; text-align: right;}
+        }
+        .card-body {
+          max-height: 70vh; 
+          overflow-x: auto;
+        }
+      }
+
+    }
+  }
+}
